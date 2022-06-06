@@ -5,6 +5,9 @@ export default function Hello() {
   function showName() {
     console.log("Mike");
   }
+  function showText(txt) {
+    console.log(txt);
+  }
 
   return (
     <div>
@@ -17,6 +20,13 @@ export default function Hello() {
       >
         Show age
       </button>
+      <input
+        type="text"
+        onChange={(e) => {
+          const txt = e.target.value;
+          showText(txt);
+        }}
+      />
       <World />
       <World />
       <div className={styles.box}>Hello</div>
