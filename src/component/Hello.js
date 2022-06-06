@@ -1,35 +1,21 @@
 import World from "./World";
 import styles from "./Hello.module.css";
+import { useState } from "react";
 
 export default function Hello() {
-  function showName() {
-    console.log("Mike");
-  }
-  function showText(txt) {
-    console.log(txt);
-  }
+  // let name = "Mike";
+  const [name, setName] = useState("Mike");
 
   return (
     <div>
-      <h1>Hello</h1>
-      <button onClick={showName}>Show name</button>
+      <h2 id="name">{name}</h2>
       <button
         onClick={() => {
-          console.log(30);
+          setName(name === "Mike" ? "Jane" : "Mike");
         }}
       >
-        Show age
+        Change
       </button>
-      <input
-        type="text"
-        onChange={(e) => {
-          const txt = e.target.value;
-          showText(txt);
-        }}
-      />
-      <World />
-      <World />
-      <div className={styles.box}>Hello</div>
     </div>
   );
 }
