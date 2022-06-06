@@ -2,18 +2,21 @@ import World from "./World";
 import styles from "./Hello.module.css";
 
 export default function Hello() {
+  function showName() {
+    console.log("Mike");
+  }
+
   return (
     <div>
-      <h1
-        style={{
-          color: "#f00",
-          borederRight: "2px solid #000",
-          marginBottom: "50px",
-          opacity: 0.5
+      <h1>Hello</h1>
+      <button onClick={showName}>Show name</button>
+      <button
+        onClick={() => {
+          console.log(30);
         }}
       >
-        Hello
-      </h1>
+        Show age
+      </button>
       <World />
       <World />
       <div className={styles.box}>Hello</div>
